@@ -8,16 +8,17 @@
   
     <meta name="keywords" content="ZMonet,ZMonet's Blog" />
   
-  <meta name="description" content="[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函">
+  <meta name="description" content="内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函数构成重载。调用方法时会根据参数列表的类型来选择对应的方法。 void max(int a,int">
+<meta name="keywords" content="内存分配,方法的重载和重写,关键字Static、This、Package、Import">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础知识（1）">
 <meta property="og:url" content="http://yoursite.com/2017/12/24/java1/index.html">
 <meta property="og:site_name" content="ZMonet&#39;s Blog">
-<meta property="og:description" content="[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函">
-<meta property="og:updated_time" content="2017-12-24T15:31:33.871Z">
+<meta property="og:description" content="内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函数构成重载。调用方法时会根据参数列表的类型来选择对应的方法。 void max(int a,int">
+<meta property="og:updated_time" content="2017-12-24T15:36:37.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识（1）">
-<meta name="twitter:description" content="[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函">
+<meta name="twitter:description" content="内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函数构成重载。调用方法时会根据参数列表的类型来选择对应的方法。 void max(int a,int">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -114,6 +115,13 @@
     <div class="post-title-bar">
       <ul>
           
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Java/">Java</a>
+                  
+              </li>
+          
         <li>
           <i class="fa fa-calendar"></i>  2017-12-24
         </li>
@@ -131,8 +139,7 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]</p>
-<h3 id="内存分配："><a href="#内存分配：" class="headerlink" title="内存分配："></a>内存分配：</h3><p>局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。</p>
+            <h3 id="内存分配："><a href="#内存分配：" class="headerlink" title="内存分配："></a>内存分配：</h3><p>局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。</p>
 <h3 id="函数重载-overroad-："><a href="#函数重载-overroad-：" class="headerlink" title="函数重载(overroad)："></a>函数重载(overroad)：</h3><p> 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函数构成重载。调用方法时会根据参数列表的类型来选择对应的方法。</p>
 <pre><code>void max(int a,int b){
   System.out.println(a&gt;b?a:b);
@@ -155,7 +162,7 @@ void max(float a,float b){
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年12月24日 23:31</p>
+        <p>最后更新： 2017年12月24日 23:36</p>
         <p>原始链接： <a class="post-url" href="/2017/12/24/java1/" title="Java基础知识（1）">http://yoursite.com/2017/12/24/java1/</a></p>
         <footer>
             <a href="http://yoursite.com">
@@ -257,6 +264,17 @@ void max(float a,float b){
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/内存分配/" class="color5">内存分配</a>
+      
+    <a href="/tags/方法的重载和重写/" class="color4">方法的重载和重写</a>
+      
+    <a href="/tags/关键字Static、This、Package、Import/" class="color5">关键字Static、This、Package、Import</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -337,10 +355,10 @@ void max(float a,float b){
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            
+            <a class="category-link" href="/categories/Java/">Java</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            
+            <a href="/tags/关键字Static、This、Package、Import/" style="font-size: 10px;">关键字Static、This、Package、Import</a> <a href="/tags/内存分配/" style="font-size: 10px;">内存分配</a> <a href="/tags/方法的重载和重写/" style="font-size: 10px;">方法的重载和重写</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -373,7 +391,7 @@ void max(float a,float b){
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            
+            <a href="/tags/关键字Static、This、Package、Import/" style="font-size: 10px;">关键字Static、This、Package、Import</a> <a href="/tags/内存分配/" style="font-size: 10px;">内存分配</a> <a href="/tags/方法的重载和重写/" style="font-size: 10px;">方法的重载和重写</a>
         </div>
     </div>
 </div>
