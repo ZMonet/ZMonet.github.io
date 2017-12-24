@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ZMonet&#39;s Blog</title>
+  <title>Java基础知识（1） | ZMonet&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="ZMonet,ZMonet's Blog" />
   
-  <meta name="description" content="Java基础知识（1）@(内容)[[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是">
+  <meta name="description" content="[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ZMonet&#39;s Blog">
+<meta property="og:title" content="Java基础知识（1）">
 <meta property="og:url" content="http://yoursite.com/2017/12/24/java1/index.html">
 <meta property="og:site_name" content="ZMonet&#39;s Blog">
-<meta property="og:description" content="Java基础知识（1）@(内容)[[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是">
-<meta property="og:updated_time" content="2017-12-24T15:25:33.392Z">
+<meta property="og:description" content="[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函">
+<meta property="og:updated_time" content="2017-12-24T15:31:33.871Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZMonet&#39;s Blog">
-<meta name="twitter:description" content="Java基础知识（1）@(内容)[[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是">
+<meta name="twitter:title" content="Java基础知识（1）">
+<meta name="twitter:description" content="[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -105,10 +105,33 @@
         <section id="main" class="body-wrap"><article id="post-java1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Java基础知识（1）
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-12-24
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="Java基础知识（1）"><a href="#Java基础知识（1）" class="headerlink" title="Java基础知识（1）"></a>Java基础知识（1）</h1><p>@(内容)[[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]]</p>
+            <p>[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]</p>
 <h3 id="内存分配："><a href="#内存分配：" class="headerlink" title="内存分配："></a>内存分配：</h3><p>局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。</p>
 <h3 id="函数重载-overroad-："><a href="#函数重载-overroad-：" class="headerlink" title="函数重载(overroad)："></a>函数重载(overroad)：</h3><p> 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函数构成重载。调用方法时会根据参数列表的类型来选择对应的方法。</p>
 <pre><code>void max(int a,int b){
@@ -132,8 +155,8 @@ void max(float a,float b){
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年12月24日 23:25</p>
-        <p>原始链接： <a class="post-url" href="/2017/12/24/java1/" title="">http://yoursite.com/2017/12/24/java1/</a></p>
+        <p>最后更新： 2017年12月24日 23:31</p>
+        <p>原始链接： <a class="post-url" href="/2017/12/24/java1/" title="Java基础知识（1）">http://yoursite.com/2017/12/24/java1/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/headpiture.png" alt="ZMonet">
@@ -190,7 +213,7 @@ void max(float a,float b){
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/12/24/java1/&title=ZMonet's Blog&pic=http://yoursite.comimages/headpiture.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/12/24/java1/&title=《Java基础知识（1）》 — ZMonet's Blog&pic=http://yoursite.comimages/headpiture.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -200,7 +223,7 @@ void max(float a,float b){
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/12/24/java1/&title=ZMonet's Blog&source=Trust and do it." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/12/24/java1/&title=《Java基础知识（1）》 — ZMonet's Blog&source=Trust and do it." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -210,7 +233,7 @@ void max(float a,float b){
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=ZMonet's Blog&url=http://yoursite.com/2017/12/24/java1/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java基础知识（1）》 — ZMonet's Blog&url=http://yoursite.com/2017/12/24/java1/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -243,7 +266,7 @@ void max(float a,float b){
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java基础知识（1）"><span class="post-toc-text">Java基础知识（1）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存分配："><span class="post-toc-text">内存分配：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数重载-overroad-："><span class="post-toc-text">函数重载(overroad)：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数重写（overwrite-override"><span class="post-toc-text">函数重写（overwrite/override)</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存分配："><span class="post-toc-text">内存分配：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数重载-overroad-："><span class="post-toc-text">函数重载(overroad)：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数重写（overwrite-override"><span class="post-toc-text">函数重写（overwrite/override)</span></a></li></ol>
         </nav>
     </aside>
     
