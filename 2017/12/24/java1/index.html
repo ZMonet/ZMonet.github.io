@@ -8,16 +8,16 @@
   
     <meta name="keywords" content="ZMonet,ZMonet's Blog" />
   
-  <meta name="description" content="关于我一个菜鸟程序猿，目前仍处于学习阶段，计划未来主要发展方向为JavaWeb开发  关于学习 ：正在往终身学习者前进…                         近期学习方向：javaWeb以及前端开发 关于爱好 ：二次元爱好者，骨灰级海贼迷 ，喜欢篮球和足球。联系方式 ：  QQ: 2335195449                         Email: 2335195449@">
-<meta property="og:type" content="website">
+  <meta name="description" content="Java基础知识（1）@(内容)[[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ZMonet&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/12/24/java1/index.html">
 <meta property="og:site_name" content="ZMonet&#39;s Blog">
-<meta property="og:description" content="关于我一个菜鸟程序猿，目前仍处于学习阶段，计划未来主要发展方向为JavaWeb开发  关于学习 ：正在往终身学习者前进…                         近期学习方向：javaWeb以及前端开发 关于爱好 ：二次元爱好者，骨灰级海贼迷 ，喜欢篮球和足球。联系方式 ：  QQ: 2335195449                         Email: 2335195449@">
-<meta property="og:updated_time" content="2017-12-24T13:52:29.352Z">
+<meta property="og:description" content="Java基础知识（1）@(内容)[[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是">
+<meta property="og:updated_time" content="2017-12-24T15:25:33.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZMonet&#39;s Blog">
-<meta name="twitter:description" content="关于我一个菜鸟程序猿，目前仍处于学习阶段，计划未来主要发展方向为JavaWeb开发  关于学习 ：正在往终身学习者前进…                         近期学习方向：javaWeb以及前端开发 关于爱好 ：二次元爱好者，骨灰级海贼迷 ，喜欢篮球和足球。联系方式 ：  QQ: 2335195449                         Email: 2335195449@">
+<meta name="twitter:description" content="Java基础知识（1）@(内容)[[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]] 内存分配：局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。 函数重载(overroad)： 函数名和返回值一样，但是">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -102,19 +102,38 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-java1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry " itemprop="articleBody">
+    <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>一个菜鸟程序猿，目前仍处于学习阶段，计划未来主要发展方向为JavaWeb开发</p>
-<p> <strong>关于学习</strong> ：正在往终身学习者前进…<br>                         近期学习方向：javaWeb以及前端开发<br> <strong>关于爱好</strong> ：二次元爱好者，骨灰级海贼迷 ，喜欢篮球和足球。<br><strong>联系方式</strong> ：  QQ: 2335195449<br>                         Email: 2335195449@qq.com</p>
+            <h1 id="Java基础知识（1）"><a href="#Java基础知识（1）" class="headerlink" title="Java基础知识（1）"></a>Java基础知识（1）</h1><p>@(内容)[[内存分配]、[方法的重载和重写]、[关键字Static、This、Package、Import]]</p>
+<h3 id="内存分配："><a href="#内存分配：" class="headerlink" title="内存分配："></a>内存分配：</h3><p>局部变量的值存储在栈中，并且随函数的执行完毕自动消失，而通过new关键字创建的对象的值则存储在堆中，使用完后手动回收或由系统进行自动回收。下面函数中的test为类Test的一个实例，i为局部变量。</p>
+<h3 id="函数重载-overroad-："><a href="#函数重载-overroad-：" class="headerlink" title="函数重载(overroad)："></a>函数重载(overroad)：</h3><p> 函数名和返回值一样，但是参数的类型和个数不一样的两个或多个函数构成重载。调用方法时会根据参数列表的类型来选择对应的方法。</p>
+<pre><code>void max(int a,int b){
+  System.out.println(a&gt;b?a:b);
+   }
+
+void max(float a,float b){
+ System.out.println(a&gt;b?a:b);
+  }
+
+ void max(short a,short b){
+  System.out.println(a&gt;b?a:b);
+  }
+  //这三个函数构成重载，对于这三个函数的调用如下
+  Test t=new Test;
+  t.max(3,4)；           //调用参数为int型的函数
+  t.max(3.1,4.1);         //调用参数为float型的函数
+  short a=3,b=4;
+  t.max(a,b);           //调用参数为short型的函数
+</code></pre><h3 id="函数重写（overwrite-override"><a href="#函数重写（overwrite-override" class="headerlink" title="函数重写（overwrite/override)"></a>函数重写（overwrite/override)</h3><p>1.重写方法必须与被重写方法具有相同的方法名称，参数列表和返回类型<br>2.重写方法不能使用比被重写方法更严格的访问权限</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年12月24日 21:52</p>
-        <p>原始链接： <a class="post-url" href="/about/index.html" title="">http://yoursite.com/about/index.html</a></p>
+        <p>最后更新： 2017年12月24日 23:25</p>
+        <p>原始链接： <a class="post-url" href="/2017/12/24/java1/" title="">http://yoursite.com/2017/12/24/java1/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/headpiture.png" alt="ZMonet">
@@ -171,7 +190,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/about/&title=ZMonet's Blog&pic=http://yoursite.comimages/headpiture.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/12/24/java1/&title=ZMonet's Blog&pic=http://yoursite.comimages/headpiture.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -181,22 +200,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/about/&title=ZMonet's Blog&source=Trust and do it." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/12/24/java1/&title=ZMonet's Blog&source=Trust and do it." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/about/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/12/24/java1/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=ZMonet's Blog&url=http://yoursite.com/about/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=ZMonet's Blog&url=http://yoursite.com/2017/12/24/java1/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/about/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/12/24/java1/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -206,7 +225,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/about/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2017/12/24/java1/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -224,10 +243,20 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于我"><span class="post-toc-text">关于我</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java基础知识（1）"><span class="post-toc-text">Java基础知识（1）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存分配："><span class="post-toc-text">内存分配：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数重载-overroad-："><span class="post-toc-text">函数重载(overroad)：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数重写（overwrite-override"><span class="post-toc-text">函数重写（overwrite/override)</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">firstblog</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
 
 
 
