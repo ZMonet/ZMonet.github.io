@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java基础知识（2） | ZMonet&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZMonet,ZMonet's Blog" />
+  
+  <meta name="description" content="访问控制修饰符 toString方法： 在进行String与其他类型数据的连接操作时，如：System.out.println(“info”+2【int型】/i/person【引用】），将自动调用该对象的toString方法； 如果用户没有重写toString方法，对象引用类型默认调用的的toString方法返回的字符串是：“创建该对象的类名+@+哈希编码”， 如果用户重写了toString方法，">
+<meta name="keywords" content="toString方法,equals方法,重载构造函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识（2）">
+<meta property="og:url" content="https://zmonet.github.io/java2/index.html">
+<meta property="og:site_name" content="ZMonet&#39;s Blog">
+<meta property="og:description" content="访问控制修饰符 toString方法： 在进行String与其他类型数据的连接操作时，如：System.out.println(“info”+2【int型】/i/person【引用】），将自动调用该对象的toString方法； 如果用户没有重写toString方法，对象引用类型默认调用的的toString方法返回的字符串是：“创建该对象的类名+@+哈希编码”， 如果用户重写了toString方法，">
+<meta property="og:image" content="https://zmonet.github.io/java2/block1.png">
+<meta property="og:image" content="https://zmonet.github.io/java2/block2.png">
+<meta property="og:updated_time" content="2017-12-26T11:58:10.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础知识（2）">
+<meta name="twitter:description" content="访问控制修饰符 toString方法： 在进行String与其他类型数据的连接操作时，如：System.out.println(“info”+2【int型】/i/person【引用】），将自动调用该对象的toString方法； 如果用户没有重写toString方法，对象引用类型默认调用的的toString方法返回的字符串是：“创建该对象的类名+@+哈希编码”， 如果用户重写了toString方法，">
+<meta name="twitter:image" content="https://zmonet.github.io/java2/block1.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">ZMonet&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/headpiture.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        ZMonet&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        Trust and do it.
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-java2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Java基础知识（2）
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Java/">Java</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-12-26
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="访问控制修饰符"><a href="#访问控制修饰符" class="headerlink" title="访问控制修饰符"></a>访问控制修饰符</h3><p><img src="/java2/block1.png" alt=""><br><img src="/java2/block2.png" alt=""></p>
+<h3 id="toString方法："><a href="#toString方法：" class="headerlink" title="toString方法："></a>toString方法：</h3><ol>
+<li>在进行String与其他类型数据的连接操作时，如：System.out.println(“info”+2【int型】/i/person【引用】），将自动调用该对象的toString方法；</li>
+<li>如果用户没有重写toString方法，<strong>对象引用类型</strong>默认调用的的toString方法返回的字符串是：“创建该对象的类名+@+哈希编码”，</li>
+<li>如果用户重写了toString方法，则默认调用用户所写的方法。<br>如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package MathodDemo;</span><br><span class="line">public class ToStringDemo &#123;</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">   Dog d = new Dog();</span><br><span class="line">   System.out.println(&quot;d=&quot; + d); </span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">class Dog &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//输出为：d=MathodDemo.Dog@4554617c</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h3><p>  1.调用系统的equals方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Cat c1=new Cat();</span><br><span class="line">Cat c2=new Cat();</span><br><span class="line"></span><br><span class="line">System.out.println(c1==c2) //比较的是c1和c2的地址，这个输出永远为false</span><br><span class="line">System.out.println(c1.equals(c2)) //如果用户没重写equals方法，这个语句的作用和上一句是一样的</span><br></pre></td></tr></table></figure>
+<p>2.重写equals方法并调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals(Cat c)&#123;   //重写equals方法</span><br><span class="line">   if(c==null) </span><br><span class="line">        return false; </span><br><span class="line">   else if(this.color==c.color&amp;&amp;this.weight==c.weight</span><br><span class="line">       &amp;&amp;this.height==c.height)</span><br><span class="line">                return true;</span><br><span class="line">   else</span><br><span class="line">            return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(c1.equals(c2))</span><br><span class="line"> //这时会比较对象的属性，例如color,weight,height来判断c1和c2是否相等</span><br></pre></td></tr></table></figure>
+<h3 id="继承中的构造方法"><a href="#继承中的构造方法" class="headerlink" title="继承中的构造方法"></a>继承中的构造方法</h3><ol>
+<li>子类的构造过程必须调用其基类的构造方法，因此子类构造出的对象具有子类和父类的对象，用super关键字调用父类方法，用this关键字调用子类方法</li>
+<li>子类可以在自己的构造方法中使用super(argument_list)调用基类的构造方法，使用this(argument_list)调用本类的另外的构造方法</li>
+<li><strong>如果用super调用父类构造方法，必须写在子类构造方法的第一行</strong>，如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ChildClass()&#123;     //正确</span><br><span class="line"> super(300);</span><br><span class="line">System.out.println(&quot;ChildClass1&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">ChildClass()&#123;    //错误</span><br><span class="line"> System.out.println(&quot;ChildClass1&quot;);</span><br><span class="line"> super(300);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>如果子类的构造方法没有显式地调用基类地构造方法，则系统默认调用基类中无参数的构造方法</li>
+<li>如果子类的构造方法没有显式地调用基类地构造方法，而基类中又没有无参数的构造方法，则编译出错。如下图代码中，如果把父类的无参数构造方法注释掉，那么子类的第二个构造方法会出错，因为它没有显式地调用而且父类中没有无参数构造方      法</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//父类</span><br><span class="line">public class SuperDemo &#123;</span><br><span class="line">private int i;</span><br><span class="line"></span><br><span class="line">SuperDemo()&#123;   //无参数构造方法</span><br><span class="line">System.out.println(&quot;SuperClass1&quot;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">SuperDemo(int i)&#123; //带参数构造方法</span><br><span class="line">this.i=i;</span><br><span class="line">System.out.println(&quot;SuperClass&quot;+i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//子类class ChildClass extends SuperDemo&#123;    </span><br><span class="line">    private int i;    </span><br><span class="line">    ChildClass()&#123;       //无参数构造方法 </span><br><span class="line">       super(300);     //显式调用父类带参数构造方法       </span><br><span class="line">     System.out.println(&quot;ChildClass1&quot;); </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">   ChildClass(int i)&#123;  //带参数构造方法      </span><br><span class="line">     this.i=i;          //隐式调用父类无参数构造方法       </span><br><span class="line">   System.out.println(&quot;ChildClass2&quot;); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//测试类</span><br><span class="line">class Test&#123;</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">ChildClass c1=new ChildClass();   //调用子类无参数构造方法</span><br><span class="line">ChildClass c2=new ChildClass(200);   //调用子类带参数构造方法</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月26日 19:58</p>
+        <p>原始链接： <a class="post-url" href="/java2/" title="Java基础知识（2）">https://zmonet.github.io/java2/</a></p>
+        <footer>
+            <a href="https://zmonet.github.io">
+                <img src="/images/headpiture.png" alt="ZMonet">
+                ZMonet
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢支持，多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zmonet.github.io/java2/&title=《Java基础知识（2）》 — ZMonet's Blog&pic=https://zmonet.github.ioimages/headpiture.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zmonet.github.io/java2/&title=《Java基础知识（2）》 — ZMonet's Blog&source=Trust and do it." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zmonet.github.io/java2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java基础知识（2）》 — ZMonet's Blog&url=https://zmonet.github.io/java2/&via=https://zmonet.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zmonet.github.io/java2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://zmonet.github.io/java2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/toString方法/" class="color1">toString方法</a>
+      
+    <a href="/tags/equals方法/" class="color4">equals方法</a>
+      
+    <a href="/tags/重载构造函数/" class="color2">重载构造函数</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问控制修饰符"><span class="post-toc-text">访问控制修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#toString方法："><span class="post-toc-text">toString方法：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#equals方法"><span class="post-toc-text">equals方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#继承中的构造方法"><span class="post-toc-text">继承中的构造方法</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/java1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Java基础知识（1）</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2017 ZMonet<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://zmonet.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Java/">Java</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/equals方法/" style="font-size: 10px;">equals方法</a> <a href="/tags/toString方法/" style="font-size: 10px;">toString方法</a> <a href="/tags/关键字Static、This、Package、Import/" style="font-size: 10px;">关键字Static、This、Package、Import</a> <a href="/tags/内存分配/" style="font-size: 10px;">内存分配</a> <a href="/tags/方法的重载和重写/" style="font-size: 10px;">方法的重载和重写</a> <a href="/tags/重载构造函数/" style="font-size: 10px;">重载构造函数</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/equals方法/" style="font-size: 10px;">equals方法</a> <a href="/tags/toString方法/" style="font-size: 10px;">toString方法</a> <a href="/tags/关键字Static、This、Package、Import/" style="font-size: 10px;">关键字Static、This、Package、Import</a> <a href="/tags/内存分配/" style="font-size: 10px;">内存分配</a> <a href="/tags/方法的重载和重写/" style="font-size: 10px;">方法的重载和重写</a> <a href="/tags/重载构造函数/" style="font-size: 10px;">重载构造函数</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
