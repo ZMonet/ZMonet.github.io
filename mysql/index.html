@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ZMonet&#39;s Blog">
 <meta property="og:description" content="安装MySql-8.0.11后连接navicat出错刚开始学数据库，安装了mysql之后，不想用命令行，想用一下navicat，安装了navicat之后连接数据库报错，错误如下：   Client does not support authentication protocol requested by server; consider upgrading MySQL client  用了很多百度">
 <meta property="og:image" content="https://zmonet.github.io/mysql/mysql.png">
-<meta property="og:updated_time" content="2018-05-09T17:01:16.554Z">
+<meta property="og:updated_time" content="2018-05-09T17:08:46.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql使用">
 <meta name="twitter:description" content="安装MySql-8.0.11后连接navicat出错刚开始学数据库，安装了mysql之后，不想用命令行，想用一下navicat，安装了navicat之后连接数据库报错，错误如下：   Client does not support authentication protocol requested by server; consider upgrading MySQL client  用了很多百度">
@@ -137,12 +137,12 @@
             
             <h2 id="安装MySql-8-0-11后连接navicat出错"><a href="#安装MySql-8-0-11后连接navicat出错" class="headerlink" title="安装MySql-8.0.11后连接navicat出错"></a>安装MySql-8.0.11后连接navicat出错</h2><p>刚开始学数据库，安装了mysql之后，不想用命令行，想用一下navicat，安装了navicat之后连接数据库报错，错误如下：</p>
 <p>  <strong>Client does not support authentication protocol requested by server; consider upgrading MySQL client</strong></p>
-<p> 用了很多百度上的方法都没用，折腾了几天终于找到了解决的方法（虽然目前我也还不知道到具体的原因），但可以使用下面这条语句来解决：<br>    ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘831015’;<br>    运行如下图：<br> <img src="/mysql/mysql.png" alt="form1"></p>
+<p> 用了很多百度上的方法都没用，折腾了几天终于找到了解决的方法（虽然目前我也还不知道到具体的原因），但可以使用下面这条语句来解决：<br>  **ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘123456’;<br>    运行如下图：<br> <img src="/mysql/mysql.png" alt="form1"></p>
 <p> BY 后面的密码可以自行设置；</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年05月10日 01:01</p>
+        <p>最后更新： 2018年05月10日 01:08</p>
         <p>原始链接： <a class="post-url" href="/mysql/" title="MySql使用">https://zmonet.github.io/mysql/</a></p>
         <footer>
             <a href="https://zmonet.github.io">
